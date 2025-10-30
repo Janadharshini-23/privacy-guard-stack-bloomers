@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wi-Fi Map / Logs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+    th, td { padding: 12px; border: 1px solid #2b2f33; text-align: center; }
+  </style>
+</head>
+<body>
+  <h1>Wi-Fi Mapping & Log</h1>
+
+  {% if simultaneous %}
+    <div style="background:#b22222;color:white;padding:10px;width:60%;margin:10px auto;border-radius:8px;">
+      ⚠️ Multiple recent SSID entries detected ({{ recent_count }}) — possible spoof or high activity.
+    </div>
+  {% endif %}
+
+  <table>
+    <tr>
+      <th>SSID / Source</th>
+      <th>Status</th>
+      <th>Time</th>
+      <th>Origin</th>
+    </tr>
+    {% for e in logs %}
+    <tr>
+      <td>{{ e.ssid }}</td>
+      <td style="color: {% if 'Safe' in e.status or 'Encrypted' in e.status or 'Likely' in e.status %}lightgreen{% elif 'Suspicious' in e.status or 'Unsafe' in e.status %}orange{% else %}yellow{% endif %}">
+        {{ e.status }}
+      </td>
+      <td>{{ e.time_str }}</td>
+      <td>{{ e.source }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <form action="/clear_logs" method="post" style="text-align:center;margin-top:12px;">
+    <button type="submit" style="padding:8px 14px;border-radius:6px;border:none;background:#45a29e;color:white">Clear Logs</button>
+  </form>
+
+  <p style="text-align:center;margin-top:14px;"><a href="/">Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Guard | Stack Bloomers</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Privacy Guard 🌐</h1>
+  <h3>Protect yourself on public Wi-Fi networks</h3>
+
+  <div class="card">
+    <h2>🔒 Check HTTPS Security</h2>
+    <form action="/check_url" method="post">
+      <input type="text" name="data" placeholder="Enter website (e.g., google.com)" required>
+      <button type="submit">Check</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>📶 Captive Portal Detection</h2>
+    <form action="/captive_test" method="post">
+      <button type="submit">Run Test</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>🔐 Encryption Demo</h2>
+    <form action="/encrypt" method="post">
+      <input type="text" name="data" placeholder="Enter text to encrypt" required>
+      <button type="submit">Encrypt</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>📍 Wi-Fi Mapping & Legality Check</h2>
+    <form action="/submit_ssid" method="post">
+      <input type="text" name="ssid" placeholder="Enter network SSID (e.g., CafeFreeNet)" required>
+      <button type="submit">Submit SSID</button>
+    </form>
+    <p style="font-size:13px;opacity:0.8">Tip: Enter SSID names you see (or use example like <code>FreeWifi_Cafe</code>) — system will mark suspicious ones.</p>
+    <p><a href="/map">View Wi-Fi Map / Logs</a></p>
+  </div>
+
+</body>
+</html>

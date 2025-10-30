@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result | Privacy Guard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Result</h1>
+  <p>{{ text|safe }}</p>
+  <a href="/">⬅️ Back</a> | <a href="/map">View Wi-Fi Map / Logs</a>
+</body>
+</html>
