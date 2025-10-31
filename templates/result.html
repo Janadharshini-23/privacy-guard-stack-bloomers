@@ -1,12 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Result | Privacy Guard</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Result | Privacy Guard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+        }
+        h3 {
+            color: #58a6ff;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(88,166,255,0.2);
+        }
+        th, td {
+            border: 1px solid #30363d;
+            padding: 12px;
+        }
+        th {
+            background-color: #161b22;
+            color: #58a6ff;
+        }
+        tr:nth-child(even) { background-color: #1c2128; }
+        tr:nth-child(odd) { background-color: #161b22; }
+        td {
+            color: #0d1114ff;
+        }
+        tr:hover {
+            background-color: #21262d;
+            transition: 0.2s;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #79c0ff;
+        }
+    </style>
 </head>
 <body>
-  <h1>Result</h1>
-  <p>{{ text|safe }}</p>
-  <a href="/">⬅️ Back</a> | <a href="/map">View Wi-Fi Map / Logs</a>
+    <h3>🛡️ Privacy Guard Scan Result</h3>
+    <div style="margin: 30px auto; width: 85%;">
+        {{ text | safe }}
+    </div>
+
+    <div>
+        <a href="/" class="btn">🔙 Back</a>
+        <a href="/map" class="btn">📊 View Wi-Fi Map / Logs</a>
+    </div>
 </body>
 </html>

@@ -9,6 +9,38 @@
   <h3>Protect yourself on public Wi-Fi networks</h3>
 
   <div class="card">
+    <h2>📡 Live Wi-Fi Scan</h2>
+    <form action="/scan" method="post">
+      <button type="submit">Scan Nearby Wi-Fi</button>
+    </form>
+    <div id="scan-section" style="text-align:center; margin-top:30px;">
+  <h2>📡 Live Wi-Fi Scanner</h2>
+  <p style="color:#9ba6b8;">Detecting nearby Wi-Fi networks and analyzing security...</p>
+
+  <!-- Scanning Animation -->
+  <div id="scanner-animation" style="display:none;">
+    <img src="https://cdn.dribbble.com/users/2059463/screenshots/6015510/wifi_loader.gif" 
+         alt="Scanning..." width="180" style="margin:20px auto;">
+    <p style="color:#58a6ff;">Scanning networks... please wait</p>
+  </div>
+
+  <form id="scan-form" action="/scan" method="post">
+      <button type="submit" class="btn">🔍 Start Scan</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("scan-form").addEventListener("submit", function() {
+    document.getElementById("scanner-animation").style.display = "block";
+});
+</script>
+
+    <p style="font-size:13px;opacity:0.8">Note: Scanning requires system permissions. If scan fails, use manual SSID submission below.</p>
+  </div>
+
+
+
+  <div class="card">
     <h2>🔒 Check HTTPS Security</h2>
     <form action="/check_url" method="post">
       <input type="text" name="data" placeholder="Enter website (e.g., google.com)" required>

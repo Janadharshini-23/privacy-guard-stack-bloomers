@@ -1,7 +1,7 @@
 body {
   font-family: Poppins, sans-serif;
   background: #0b0c10;
-  color: #fff;
+  color: #dbc6c6;
   text-align: center;
   margin-top: 40px;
 }
@@ -25,7 +25,7 @@ button {
   border: none;
   border-radius: 8px;
   background-color: #45a29e;
-  color: white;
+  color: rgb(240, 227, 227);
   cursor: pointer;
 }
 button:hover { background-color: #66fcf1; }
@@ -35,3 +35,105 @@ a {
   color: #66fcf1;
   text-decoration: none;
 }
+button, .btn {
+    background-color: #238636;
+    color: #f4eded;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+button:hover, .btn:hover {
+    background-color: #2ea043;
+}
+/* ==== Table Styling ==== */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+th {
+  background-color: #1a1a40;
+  color: #e7d8d8;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table Rows */
+td {
+  padding: 12px;
+  text-align: center;
+  color: #ecdede;
+  font-weight: 500;
+}
+
+/* Row Colors Based on Status */
+tr.safe {
+  background-color: #a8ffb0;  
+  color: #070101; /* bright mint green */
+}
+
+tr.unsafe {
+  background-color: #ffb3b3;   /* soft red */
+  color: #e6dede;
+}
+
+tr.suspicious {
+  background-color: #fff6a3;   /* pale yellow */
+}
+
+tr.unknown {
+  background-color: #b3e0ff;   /* light blue for unknown */
+}
+
+/* Hover Effect */
+tr:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Recommendation Text */
+.recommendation {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #1a1a40;
+}
+
+.recommendation a {
+  color: #0078ff;
+  text-decoration: underline;
+}
+
+.recommendation a:hover {
+  color: #0056b3;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #0078ff;
+  color: rgb(13, 10, 10);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
